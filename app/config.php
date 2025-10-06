@@ -10,7 +10,7 @@ class Config {
     const DB_USER = '42daaa2f7db180005e7fd85f4b39';
     const DB_PORT='10272';
     const DB_PASS = '068e42da-aa2f-7f3d-8000-f96b72b661fe';
-    const CACHE_DURATION = 5 * 60; // Cache duration in seconds (5 minutes)
+    const CACHE_DURATION = 5 * 60; // Cache duration in secons (5 minutes)
 }
 
 class Database {
