@@ -6,7 +6,7 @@ class Config {
     const DB_NAME = 'element_counter';
     const DB_USER = 'root';
     const DB_PASS = '';
-    const CACHE_DURATION = 24 * 60 * 60; //24 hrs
+    const CACHE_DURATION = 5 * 60; // Cache duration in seconds (5 minutes)
 }
 
 class Database {

@@ -69,7 +69,7 @@ $(document).ready(function() {
             }
         });
     }
-    
+    // Function to update the DOM with results such as request details and statistics
     function displayResults(data) {
         const requestHtml = `
             <div class="result-item">
@@ -118,4 +118,34 @@ $(document).ready(function() {
     function hideResults() {
         $('#results').addClass('hidden');
     }
+    $('.mobile-toggle').on('click', function() {
+        $(this).toggleClass('active');
+        $('.nav-menu').toggleClass('active');
+    });
+    
+    // Mobile dropdown functionality
+    $('.dropdown > .nav-link').on('click', function(e) {
+        if ($(window).width() <= 768) {
+            e.preventDefault();
+            $(this).parent().toggleClass('active');
+        }
+    });
+    
+    // Close mobile menu when clicking outside
+    $(document).on('click', function(e) {
+        if (!$(e.target).closest('.navbar').length) {
+            $('.mobile-toggle').removeClass('active');
+            $('.nav-menu').removeClass('active');
+            $('.dropdown').removeClass('active');
+        }
+    });
+    
+    // Handle window resize
+    $(window).on('resize', function() {
+        if ($(window).width() > 768) {
+            $('.mobile-toggle').removeClass('active');
+            $('.nav-menu').removeClass('active');
+            $('.dropdown').removeClass('active');
+        }
+    });
 });

@@ -38,7 +38,7 @@ try {
 
 function getAndValidateInput() {
     $url = filter_input(INPUT_POST, 'url', FILTER_SANITIZE_URL);
-    $element = filter_input(INPUT_POST, 'element', FILTER_SANITIZE_STRING);
+    $element = filter_input(INPUT_POST, 'element');
     
     if (!$url || !$element) {
         throw new Exception('URL and element are required');
@@ -95,7 +95,7 @@ function processElementCount($url, $element) {
 }
 
 function getCachedResult($pdo, $url, $element) {
-    $twentyFourHrsAgo = date('Y-m-d H:i:s', time() - Config::CACHE_DURATION);
+    $fiveMinsAgo = date('Y-m-d H:i:s', time() - Config::CACHE_DURATION);
     
     $stmt = $pdo->prepare("
         SELECT r.count, r.duration, r.created_at, d.name as domain 
@@ -108,7 +108,7 @@ function getCachedResult($pdo, $url, $element) {
         LIMIT 1
     ");
     
-    $stmt->execute([$url, $element, $twentyFourHrsAgo]);
+    $stmt->execute([$url, $element, $fiveMinsAgo]);
     $cached = $stmt->fetch();
     
     if ($cached) {
