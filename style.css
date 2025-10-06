@@ -102,7 +102,7 @@ button:disabled {
     animation: spin 1s linear infinite;
     margin: 0 auto 15px;
 }
-/* Consulted with AI FOR this */
+/* Consulted with AI FOR this animation */
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
