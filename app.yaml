@@ -1,0 +1,6 @@
+kind: wasmer.io/App.v0
+name: page_element_counter
+owner: eliudnyamai
+package: .
+scaling:
+  mode: single_concurrency
