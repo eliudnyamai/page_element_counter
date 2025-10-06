@@ -20,7 +20,7 @@ class Database {
     private function __construct() {
         try {
             $dsn = "mysql:host=" . Config::DB_HOST;
-            if (!empty(Config::DB_PORT)) {
+            if (!empty(Config::DB_PORT)) {//The host i found requires a port but my local environment doesnt
                 $dsn .= ";port=" . Config::DB_PORT;
             }
             $dsn .= ";dbname=" . Config::DB_NAME . ";charset=utf8mb4";
