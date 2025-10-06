@@ -1,6 +1,9 @@
 <?php
 /*Here we define configuration settings and a database connection class.
-this is  what we will use to make secure database connection throughout the application*/
+this is  what we will use to make secure database connection throughout the application
+i Assume I do not have to store the database connection details securely in environment variables
+just for this test
+*/
 class Config {
     const DB_HOST = 'db.fr-pari1.bengt.wasmernet.com';
     const DB_NAME = 'page_element_counter';
