@@ -19,8 +19,14 @@ class Database {
     
     private function __construct() {
         try {
+            $dsn = "mysql:host=" . Config::DB_HOST;
+            if (!empty(Config::DB_PORT)) {
+                $dsn .= ";port=" . Config::DB_PORT;
+            }
+            $dsn .= ";dbname=" . Config::DB_NAME . ";charset=utf8mb4";
+
             $this->pdo = new PDO(
-                "mysql:host=" . Config::DB_HOST . ";dbname=" . Config::DB_NAME . ";charset=utf8mb4",
+                $dsn,
                 Config::DB_USER,
                 Config::DB_PASS,
                 [
