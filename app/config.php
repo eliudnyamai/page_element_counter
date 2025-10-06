@@ -2,10 +2,11 @@
 /*Here we define configuration settings and a database connection class.
 this is  what we will use to make secure database connection throughout the application*/
 class Config {
-    const DB_HOST = 'localhost';
-    const DB_NAME = 'element_counter';
-    const DB_USER = 'root';
-    const DB_PASS = '';
+    const DB_HOST = 'db.fr-pari1.bengt.wasmernet.com';
+    const DB_NAME = 'page_element_counter';
+    const DB_USER = '42daaa2f7db180005e7fd85f4b39';
+    const DB_PORT='10272';
+    const DB_PASS = '068e42da-aa2f-7f3d-8000-f96b72b661fe';
     const CACHE_DURATION = 5 * 60; // Cache duration in seconds (5 minutes)
 }
 
